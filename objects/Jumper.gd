@@ -20,7 +20,7 @@ func jump():
 # 区域进入信号
 func _on_Jumper_area_entered(area):
 	target = area
-	target.get_node("Pivot").rotation = (position - target.position).angle()
+	
 	velocity = Vector2.ZERO
 	emit_signal("captured", area)
 	
