@@ -16,7 +16,11 @@ func jump():
 	target.implode()
 	target = null
 	velocity = transform.x * jump_speed
-	
+
+func die():
+	target = null
+	queue_free()
+
 # 区域进入信号
 func _on_Jumper_area_entered(area):
 	target = area
@@ -32,5 +36,7 @@ func _physics_process(delta):
 		transform = target.orbit_position.global_transform
 	else:
 		position += velocity * delta
-		
-		
+
+func _on_VisibilityNotifier2D_screen_exited():
+	if !target:
+		die()

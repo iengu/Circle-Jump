@@ -12,7 +12,7 @@ shader_param/color = Color( 0.92549, 0.929412, 0.152941, 1 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 135.106
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "Capture"
 length = 0.5
 step = 0.01
@@ -53,8 +53,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.509804 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "implode"
+[sub_resource type="Animation" id=4]
 length = 0.402
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:scale")
@@ -108,8 +107,8 @@ shape = SubResource( 2 )
 position = Vector2( 150, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Capture = SubResource( 4 )
-anims/implode = SubResource( 3 )
+anims/Capture = SubResource( 3 )
+anims/implode = SubResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
